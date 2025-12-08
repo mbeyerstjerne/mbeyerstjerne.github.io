@@ -1,5 +1,5 @@
-baseURL: "https://pascalmichaillat.org/hugo-website/" 
-title: Moritz-Maria von Igelfeld
+baseURL: "https://mbeyerstjerne.github.io" 
+title: Mark Beyer Stjerne
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -29,8 +29,8 @@ menu:
           weight: 6
 
 params:
-    description: "This website hosts Moritz-Maria von Igelfeld's research papers, books, course materials, data, curriculum vitae, and contact information."
-    author: Moritz-Maria von Igelfeld
+    description: "This website hosts Mark Beyer Stjerne's research papers, books, course materials, data, curriculum vitae, and contact information."
+    author: Mark Beyer Stjerner
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light
@@ -54,8 +54,8 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Professor Dr von Igelfeld
-          subtitle: "I am a Professor in the Institute of Romance Philology at the University of Regensburg, Germany. My research focuses on Portuguese irregular verbs. I was a doctoral student of Professor Dr Dieter Vogelsang in Munich, and later a second assistant of Professor Walter Schoeffler-Henschell at the University of Wiesbaden."
+          title: Mark Beyer Stjerne
+          subtitle: "I am a Master's student at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the Cosmic Dawn Centre. Originally from Sydney, Australia, I'm a nerd for space, mathematics, science, warm climates, and linguistics. This page is currently under some hefty renovation, so stay tuned!"
           imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
