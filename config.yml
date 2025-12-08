@@ -12,25 +12,14 @@ taxonomies:
 
 menu:
     main:
-        - name: Books
-          url: books/
-          weight: 5 
-        - name: Papers
-          url: papers/
+        - name: CV
+          url: cv/
           weight: 2
-        - name: Courses
-          url: courses/
-          weight: 3
-        - name: Data
-          url: data/
-          weight: 4 
-        - name: Blog
-          url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-          weight: 6
+        
 
 params:
-    description: "This website hosts Mark Beyer Stjerne's research papers, books, course materials, data, curriculum vitae, and contact information."
-    author: Mark Beyer Stjerner
+    description: "This website hosts Mark Beyer Stjerne's curriculum vitae and contact information."
+    author: Mark Beyer Stjerne
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light
@@ -44,7 +33,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["books","courses","papers","data"]
+    MainSections: ["books","courses","cv","data"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -55,49 +44,39 @@ params:
     profileMode:
           enabled: true
           title: Mark Beyer Stjerne
-          subtitle: "I am a Master's student at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the Cosmic Dawn Centre. Originally from Sydney, Australia, I'm a nerd for space, mathematics, science, warm climates, and linguistics. This page is currently under some hefty renovation, so stay tuned!"
-          imageUrl: "picture.jpeg"
+          subtitle: "I am a Master's student in astrophysics at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the [<ins>Cosmic Dawn Centre</ins>](https://cosmicdawn.dk). Originally from Sydney, Australia, I'm a nerd for space, STEM, and linguistics. This page is currently under some hefty renovation, so stay tuned!"
+          imageUrl: "mark.png"
           imageWidth: 160
           imageHeight: 160
           buttons:
-            - name: Papers
-              url: papers/
-            - name: Data
-              url: data/
-            - name: Books
-              url: books/
-            - name: Courses
-              url: courses/
-            - name: Tags
-              url: tags/
-            - name: Archive
-              url: archive/
-            - name: Blog
-              url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
+            - name: CV
+              url: cv/
 
     socialIcons:
-        - name: CV
-          url: cv.pdf
+        # - name: CV
+        #   url: cv.pdf
         - name: Email
-          url: mailto:igelfeld@regensburg.edu
-        - name: Zoom
-          url: https://www.zoom.us/my/igelfeld
-        - name: Location
-          url: location/
+          url: mailto:mbeyerstjerne@gmail.com
+        # - name: Zoom
+        #   url: https://www.zoom.us/my/igelfeld
+        # - name: Location
+        #   url: location/
         - name: Office Hours
           url: officehours/
-        - name: Google Scholar
-          url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
+        # - name: Google Scholar
+        #   url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
         - name: GitHub
-          url: https://github.com/pmichaillat
-        - name: Substack
-          url: https://pmichaillat.substack.com
-        - name: YouTube
-          url: https://www.youtube.com/@pmichaillat
-        - name: Twitter
-          url: https://x.com/pmichaillat
-        - name: Bluesky
-          url: https://bsky.app/profile/pmichaillat.bsky.social
+          url: https://github.com/mbeyerstjerne
+        - name: LinkedIn
+          url: https://www.linkedin.com/in/mbeyerstjerne/
+        # - name: Substack
+        #   url: https://pmichaillat.substack.com
+        # - name: YouTube
+        #   url: https://www.youtube.com/@pmichaillat
+        # - name: Twitter
+        #   url: https://x.com/pmichaillat
+        # - name: Bluesky
+        #   url: https://bsky.app/profile/pmichaillat.bsky.social
 
     assets:
         disableScrollBarStyle: true
@@ -105,7 +84,7 @@ params:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Moritz-Maria von Igelfeld"
+      text: "Mark Beyer Stjerne"
       icon: favicon.ico
       iconHeight: 18
 
