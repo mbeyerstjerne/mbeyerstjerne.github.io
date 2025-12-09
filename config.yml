@@ -12,9 +12,15 @@ taxonomies:
 
 menu:
     main:
-        - name: CV
-          url: cv/
+        - name: About Me
+          url: aboutme/
           weight: 2
+        - name: Physics Projects
+          url: research-projects/
+          weight: 3
+        - name: Data Science Projects
+          url: ds-projects/
+          weight: 4
         
 
 params:
@@ -33,7 +39,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["books","courses","cv","data"]
+    MainSections: ["about me", "cv"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -44,13 +50,17 @@ params:
     profileMode:
           enabled: true
           title: Mark Beyer Stjerne
-          subtitle: "I am a Master's student in astrophysics at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the [<ins>Cosmic Dawn Centre</ins>](https://cosmicdawn.dk). Originally from Sydney, Australia, I'm a nerd for space, STEM, and linguistics. This page is currently under some hefty renovation, so stay tuned!"
+          subtitle: "I am a Master's student in astrophysics at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the [<ins>Cosmic Dawn Center</ins>](https://cosmicdawn.dk). Originally from Sydney, Australia, I'm a nerd for space, STEM, and linguistics. This page is currently under some hefty renovation, so stay tuned!"
           imageUrl: "mark.png"
           imageWidth: 160
           imageHeight: 160
           buttons:
-            - name: CV
-              url: cv/
+            - name: About Me
+              url: about-me/
+            - name: Physics Projects
+              url: research-projects/
+            - name: Data Science Projects
+              url: ds-projects/
 
     socialIcons:
         # - name: CV
@@ -61,8 +71,8 @@ params:
         #   url: https://www.zoom.us/my/igelfeld
         # - name: Location
         #   url: location/
-        - name: Office Hours
-          url: officehours/
+        # - name: Office Hours
+        #   url: officehours/
         # - name: Google Scholar
         #   url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
         - name: GitHub

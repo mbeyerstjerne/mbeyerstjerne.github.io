@@ -1,21 +1,28 @@
-## Education
+---
+title: "CV"
+date: 2025-12-09
+hidemeta: true
+description: "Mark's CV."
 
-### **Bachelor of Science (Physics)**
+---
+
+---
+
+### Education
+
+#### **Bachelor of Science (Physics)**
 
 **University of New South Wales | Sydney, Australia | 2019 - 2021**
 
-- High Distinction performance in *Thermal Physics and Statistical Mechanics*, *Introduction to Astronomy*.
-- Distinction performance in *Physics Laboratory*, *Experimental Physics*, *Astrophysics*.
-
-### **Master of Science, Astrophysics**
+#### **Master of Science, Astrophysics**
 
 **University of Copenhagen | Copenhagen, Denmark  | 2024 - 2026 (Expected)**
 
 ---
 
-## Employment
+### Employment
 
-### Claims Handler
+#### Claims Handler
 
 **DHL Insurance and Risk Management  | Kastrup, Copenhagen | Nov 2022 - Present**
 
@@ -25,28 +32,28 @@
 
 ---
 
-## Research Experience
+### Research Experience
 
-### Student, NOT Summer School 2025
+#### Student, NOT Summer School 2025
 
 **Roque de los Muchachos Observatory | La Palma, Canary Islands | Aug 2025 - Oct 2025**
 
 - Awarded limited opportunity to perform observations at the Nordic Optical Telescope.
 
-### Research Assistant
+#### Research Assistant
 
 **University of New South Wales | Sydney, Australia | Jan 2023 - May 2023**
 
 - Performed manipulations on galactic survey catalogue data using Python and TOPCAT, maintaining compilation tools used for extracting stellar stream data for a research group focused on galactic archaeology, in an effort to improve the accessibility of research data.
 
-### Experimental Project Work
+#### Experimental Project Work
 
 **University of New South Wales | Sydney, Australia | Sep 2021 - Dec 2021**
 
 - Constructed a nonlinear oscillator circuit and recorded time-series data to examine chaotic phenomena, performing analyses using Python to draw comparison to the relevant theoretical equations of motion, and producing visual interpretations of the system’s behaviour.
 - Independently designed an experiment to determine the validity of the wave equation, utilising Fast-Fourier Transform analysis in Python to analyse measurements from a retrofitted guitar, and performing a final presentation of experimental findings.
 
-### Research Project Intern
+#### Research Project Intern
 
 **University of New South Wales | Sydney, Australia | Apr 2021 - Dec 2021**
 
@@ -56,9 +63,9 @@
 
 ---
 
-## Teaching
+### Teaching
 
-### Casual Teaching Assistant
+#### Casual Teaching Assistant
 
 **University of New South Wales, School of Physics | Sydney, Australia | Feb 2022 - May 2022**
 
@@ -67,9 +74,9 @@
 
 ---
 
-## Outreach
+### Outreach
 
-### Treasurer/Society Delegate
+#### Treasurer/Society Delegate
 
 **UNSW Space and Astronomy Society | Oct 2019 - Oct 2022**
 
@@ -78,13 +85,13 @@
 
 ---
 
-## Technical Skills
+### Technical Skills
 
-**Data analysis and management**: ****Python (SciPy, Pandas, NumPy), MATLAB, SQL, TOPCAT
+**Data analysis and management**: Python (SciPy, Pandas, NumPy, Astropy), MATLAB, SQL
 
 **Data visualisation and reporting**: Excel, PowerBI, Jupyter Notebook, Python (matplotlib)
 
-**Machine learning and AI**: Python (scikit-learn)
+**Machine learning and AI**: Python (scikit-learn, Tensorflow)
 
 **Version control management**: Git
 
@@ -92,8 +99,8 @@
 
 ---
 
-## More
+### More
 
-**Languages**: ****English (Native), Danish (Fluent), French, German & Japanese (Beginner)
+**Languages**: English (Native), Danish (Fluent), French, German & Japanese (Beginner)
 
 **Interests**: Languages, travelling, photography, food
