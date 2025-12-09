@@ -39,7 +39,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["about me", "cv"]
+    MainSections: ["about me", "research projects", "data science projects"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -57,7 +57,7 @@ params:
           buttons:
             - name: About Me
               url: about-me/
-            - name: Physics Projects
+            - name: Research Projects
               url: research-projects/
             - name: Data Science Projects
               url: ds-projects/
