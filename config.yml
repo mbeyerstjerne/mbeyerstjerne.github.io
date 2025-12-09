@@ -13,9 +13,9 @@ taxonomies:
 menu:
     main:
         - name: About Me
-          url: aboutme/
+          url: about-me/
           weight: 2
-        - name: Physics Projects
+        - name: Research Projects
           url: research-projects/
           weight: 3
         - name: Data Science Projects
