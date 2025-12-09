@@ -3,3 +3,25 @@ This is just a placeholder blank stylesheet so as to support adding custom style
 
 Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
 */
+
+details.code-block {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--theme);
+    border: 1px solid var(--border);
+}
+
+details.code-block summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.3rem 0;
+}
+
+details.code-block[open] {
+    padding-bottom: 1rem;
+}
+
+details.code-block pre {
+    margin-top: 1rem;
+}
