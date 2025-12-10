@@ -6,7 +6,7 @@ date: 2025-03-21
 description: "This project examines the applications of Gaussian mixture models to exoplanet population data." 
 summary: "This project examines the applications of Gaussian mixture models to exoplanet population data." 
 cover:
-    image: "exoplanet_clusters-1.png"
+    # image: "figures/exoplanet_clusters-1.png"
     # alt: "Some Uses For Olive Oil"
     relative: true
 draft: false
@@ -30,7 +30,7 @@ weight: 1
 
 <div style="font-size:90%; line-height:150%">
 
-  This project looks at Gaussian mixture models, discussing their effectiveness at finding clusters in clustered test data, and applying them to exoplanet parameter data taken from the <a href="https://exoplanetarchive.ipac.caltech.edu/">NASA Exoplanet Archive</a>. This was done as the final project for the course <a href="https://kurser.ku.dk/course/nfyk15002u">Advanced Methods in Applied Statistics</a>, run by Dr. Jason Koskinen (University of Copenhagen) between February and April of 2025.
+  This project looks at Gaussian mixture models, discussing their effectiveness at recovering clusters in test data, and applying them to exoplanet parameter data.</a>. This was done as the final project for the course <a href="https://kurser.ku.dk/course/nfyk15002u">Advanced Methods in Applied Statistics</a>, run by Dr. Jason Koskinen (University of Copenhagen) between February and April of 2025.
 
 </div>
 
@@ -40,7 +40,7 @@ weight: 1
 
 <div style="font-size:85%; line-height:150%">
 
-  In applied statistics and machine learning, clustering methods are used to group together data points based on the similarity of their features. <a href="https://scikit-learn.org/stable/modules/mixture.html">Gaussian mixture models</a> (GMMs) are an example of a clustering method, which attempts to cluster data into several Gaussian components. In this project, we shortly outline the mathematical framework of GMMs, then test how effective they are at recovering clusters in synthetic data sourced from a mixed Gaussian distribution. Afterwards, we apply these models to exoplanet period-radius data, and use a Kolmogorov-Smirnov test to determine how well these recovered clusters align with a Gaussian mixture.
+  In machine learning and applied statistics, clustering methods are used to divide a set of unlabelled data points into clusters, such that the data points within a cluster are more similar to each other than to those in other clusters. Gaussian mixture models (GMMs) are an example of a clustering method, which attempts to cluster data into a number of Gaussian distributions. In this project, we shortly outline the mathematical framework of GMMs, then test how effective they are at recovering clusters in synthetic data sourced from a mixed Gaussian distribution. Afterwards, we apply these models to exoplanet period-radius data, and use a Kolmogorov-Smirnov test to determine how well these recovered clusters align with a Gaussian mixture.
 
 </div>
 
@@ -50,7 +50,7 @@ weight: 1
 
 <div style="font-size:85%; line-height:150%">
 
-The Gaussian mixture model (GMM) is a probabilistic clustering technique, used to identify a set of $K$ clusters in an $M$-dimensional parameter space that best represent some observed data distribution, assuming that each cluster consists of a multivariate Gaussian distribution (each cluster has its own mean and variance). This technique is categorized as an unsupervised learning method, as clusters are identified without requiring prior information about the data points’ classifications.
+The Gaussian mixture model (GMM) is a probabilistic clustering technique, used to identify a set of $K$ clusters that best represent some observed distribution in data with $M$ parameters, assuming that each cluster consists of a multivariate Gaussian distribution (each cluster has its own mean and variance). This technique is categorized as an unsupervised learning method, as clusters are identified without requiring prior information about the data points’ classifications.
 
 The probability distribution $P(\boldsymbol{x}_n)$ of the data $\boldsymbol{x}$ (consisting of $N$ data points) can be expressed as the weighted sum of the $K$ Gaussian clusters:
 
@@ -61,7 +61,7 @@ P(\boldsymbol{x}_n) = \sum _{k=1}^K P(\boldsymbol{x}_n|\boldsymbol{\mu}_k, \bold
 $$
 
 <div style="font-size:85%; line-height:150%">
-where $k = 1 \dots K$, $P(k)$ is the mixture weight, and $\boldsymbol{\mu}_k$ and $\boldsymbol{\Sigma}_k$ are the mean and covariance matrices of the $k$-th Gaussian cluster respectively. It follows that the density distribution of an individual Gaussian cluster is:
+where $k = 1 \dots K$, $P(k)$ is the mixture weight (effectively a vector of the probability that each cluster would contain the point), and $\boldsymbol{\mu}_k$ and $\boldsymbol{\Sigma}_k$ are the mean and variances/covariance matrices of the $k$-th Gaussian cluster respectively. It follows that the density distribution of an individual Gaussian cluster is:
 </div>
 
 $$
@@ -86,7 +86,7 @@ $$
 $$
 
 <div style="font-size:85%; line-height:150%">
-The optimal values for the parameters are found by maximising the likelihood $\Lambda$. This process is akin to maximising the posterior probability of the parameters, assuming weak or non-informative priors. The parameters $\boldsymbol{\mu}_k$, $\boldsymbol{\Sigma}_k$, and $P(k)$ can be determined from the data by means of the Expectation-Maximisation (EM) algorithm:
+The optimal values for the parameters are found by maximising the likelihood $\Lambda$, which is akin to maximising the posterior probability of the parameters. The parameters $\boldsymbol{\mu}_k$, $\boldsymbol{\Sigma}_k$, and $P(k)$ can be determined from the data by means of the Expectation-Maximisation (EM) algorithm:
 </div>
 
 <div style="font-size:85%; line-height:150%">
@@ -108,6 +108,14 @@ $$
 P(k)_{\text{new}} = \frac{1}{N} \sum _{i=1}^N P(k|\boldsymbol{x}_i)
 $$
 
+<div style="font-size:85%; line-height:150%">
+
+4. The EM steps are repeated until the total likelihood $\Lambda$ converges.
+
+With these steps in mind, we have an idea of how the GMM should be able to identify clusters in data. 
+
+</div>
+
 
 ---
 
@@ -117,10 +125,10 @@ $$
 
   In order to determine whether the exoplanet data can be effectively describes as mixed Gaussian clusters, we require a method to compare the data's distribution to that of the distribution formed by the recovered Gaussian clusters. To do so, we make use of the Kolgomorov-Smirnov (K-S) test, which is a non-parametric statistical test designed to compare a sample dataset with a reference probability distribution (one-sample test) or to $m$ compare two independent sample datasets (two-sample test). It evaluates whether the distributions differ significantly by quantifying the maximum deviation between their cumulative distribution functions. The test in its one-dimensional formulation is commonly used for datasets characterized by a single variable. However, many datasets involve multi-dimensional parameter spaces, necessitating an extension of the K-S test to higher dimensions.
 
-  The two-dimensional K-S test generalizes the one-dimensional method to pairs of values, $(x,y)$, which describe each data point. Unlike in one dimension, it is not trivial to define a unique cumulative probability distribution in two dimensions (Fasano & Franceschini, 1987). To address this, the test divides the plane for each data point $(x_i,y_i)$ into four quadrants: $(x>x_i, y>y_i)$, $(x>x_i, y<y_i)$, $(x<x_i, y>y_i)$ and $(x<x_i, y<y_i)$. For each quadrant, the integrated probability (i.e. the fraction of data points contained within the quadrant) is computed, and the differences in these integrated probabilities between the two distributions are calculated. The K-S test statistic $\mathcal{D}$ is determined to be the largest absolute difference in corresponding integrated probabilities, ranging over all data points and their respective quadrants (Peacock, 1983).
+  The two-dimensional K-S test generalizes the one-dimensional method to pairs of values, $(x,y)$, which describe each data point. Unlike in one dimension, it is not trivial to define a unique cumulative probability distribution in two dimensions (Fasano & Franceschini, 1987). To address this, the test divides the plane for each data point $(x_i,y_i)$ into four quadrants: $(x>x_i, y>y_i)$, $(x>x_i, y<y_i)$, $(x<x_i, y>y_i)$ and $(x<x_i, y<y_i)$. For each quadrant, the integrated probability (i.e. the fraction of data points contained within the quadrant) is computed, and the differences in these integrated probabilities between the two distributions are calculated. The K-S test statistic $\mathcal{D}$ is determined to be the largest absolute difference in corresponding integrated probabilities, ranging over all data points and their respective quadrants (<a target="_blank" rel="noopener noreferrer" href="https://academic.oup.com/mnras/article/202/3/615/967854?login=false">Peacock, 1983</a>).
 
   <figure style="width:80%; margin:0 auto;">
-    <img src="ks_test_2d_example-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <img src="figures/ks_test_2d_example-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
     <figcaption style="text-align:center; font-weight:normal"><b>Figure 1:</b> Example of 2D K-S test. Values in corners correspond to fraction of points from respective datasets within quadrant, i.e. (Triangle | Square).</figcaption>
   </figure>
 
@@ -136,10 +144,10 @@ $$
 
 <div style="font-size:85%">
 
-  To test the GMM, we generate synthetic data from a two-dimensional Gaussian mixture model with three clusters, totaling 2,000 points. Each cluster has its own mean, covariance, and mixture weight (which represents the fraction of points assigned to that cluster relative to the entire dataset). 
+  To test the GMM, we generate synthetic data for three multivariate normal distributions, each with its own mean and covariance matrix, totaling 2,000 points.
 
   <figure style="width:80%; margin:0 auto;">
-    <img src="test_gmm_data_page-0001.jpg" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <img src="figures/test_gmm_data_page-0001.jpg" alt="drawing" style="display:block; margin:0 auto; width:80%;">
     <figcaption style="text-align:center; font-weight:normal"><b>Figure 2:</b> Synthetic data generated from a GMM with 3 clusters.</figcaption>
   </figure>
 
@@ -205,12 +213,20 @@ $$
 
   </details> 
 
+  Figure 2 shows the plotted synthetic data. We utilize the GMM implementation from the Python package <a href="https://scikit-learn.org/stable/modules/mixture.html">`scikit-learn`</a>, initialising the cluster parameters using k-means clustering. Additionally, we choose a covariance structure where each cluster is allowed its own general covariance matrix, which enables each cluster to have distinct shapes, orientations, and variances. For the GMM, 100 iterations of the EM algorithm are performed, or until convergence is achieved. The convergence criterion is monitored and reported by the model. 
+
+  <figure style="width:80%; margin:0 auto;">
+      <img src="figures/test_gmm_convergence-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+      <figcaption style="text-align:center; font-weight:normal"><b>Figure 3:</b> Natural log likelihood at each iteration step of the EM algorithm in an example application of the GMM to the data shown in Figure 2.</figcaption>
+  </figure>
+
+  Figure 3 shows an example plot of the natural log likelihood convergence through the EM-algorithm. It can be seen that model convergence is achieved after ~10 iterations of the EM algorithm, as the natural log likelihood does not increase significantly with further iterations. To select the best model, the GMM is refitted 100 times, and the parameters of the model with the highest likelihood given the data are stored.   
 
   Applying the GMM to the synthetic data, we can display the 1$\sigma$, 2$\sigma$, and 3$\sigma$ confidence ellipsoids of the Gaussian components on top of the data.
 
   <figure style="width:80%; margin:0 auto;">
-    <img src="test_gmm_clusters_page-0001.jpg" alt="drawing" style="display:block; margin:0 auto; width:80%;">
-    <figcaption style="text-align:center; font-weight:normal"><b>Figure 3:</b> GMM clustering of synthetic Gaussian-distributed data.</figcaption>
+    <img src="figures/test_gmm_clusters_page-0001.jpg" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <figcaption style="text-align:center; font-weight:normal"><b>Figure 4:</b> GMM clustering of synthetic Gaussian-distributed data.</figcaption>
   </figure>
 
   <details class="code-block">
@@ -288,7 +304,7 @@ $$
 
   </details> 
 
-  Looking at Figure 3, we can see that the GMM appears to recover the three underlying Gaussian components of the source data. 
+  Looking at Figure 4, we can see that the GMM appears to recover the three underlying Gaussian components of the source data. 
 
   To determine the optimal number of clusters, a balance must be reached between the likelihood of the fitted GMM and the complexity of the model, characterized by the number of clusters. This balance can be quantified using the Bayesian Information Criterion (BIC), which combines the model likelihood with a penalty for increased model complexity:
 
@@ -303,20 +319,22 @@ $$
   where $k$ represents the number of free parameters in the model, $n$ is the number of data points, and $\hat{\mathcal{L}}$ denotes the maximum likelihood of the model. Among a set of candidate models, the one with the lowest BIC is preferred, as the first term, $k\ln(n)$, penalizes excessive parameter usage, discouraging overfitting. However, despite the BIC favouring more complex models, we prioritize a parsimonious model, opting for a model with fewer components even if it results in a slightly higher BIC. 
   
   <figure style="width:80%; margin:0 auto;">
-    <img src="test_gmm_BIC_score_error-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
-    <figcaption style="text-align:center; font-weight:normal"><b>Figure 4:</b> BIC score with increasing cluster.</figcaption>
+    <img src="figures/test_gmm_BIC_score_error-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <figcaption style="text-align:center; font-weight:normal"><b>Figure 5:</b> BIC score with increasing cluster.</figcaption>
   </figure>
 
-  We see that the lowest BIC is reached for a GMM fitted with $k$ = 3 clusters, with no significant improvement observed beyond this. We conclude that the data is best described by three clusters, as anticipated. Table 1 presents the source parameters of the Gaussian data, along with the fitted GMM parameters and their 1$\sigma$ confidence intervals derived from 100 bootstrap trials. All of the source parameters fall within the confidence intervals of the fitted GMM parameters, confirming that the GMM accurately recovers the underlying Gaussian components. 
+  To determine the optimal number of Gaussian components, we calculate the BIC score for the fitted GMM with increasing cluster components, shown in Figure 5. Uncertainties in the BIC are estimated using 100 bootstrap trials, with resampling from the synthetic data distribution. We see that the lowest BIC is reached for a GMM fitted with $k$ = 3 clusters, with no significant improvement observed beyond this. We conclude that the data is best described by three clusters, as anticipated. Table 1 presents the source parameters of the Gaussian data, along with the fitted GMM parameters and their 1$\sigma$ confidence intervals derived from 100 bootstrap trials. All of the source parameters fall within the confidence intervals of the fitted GMM parameters, confirming that the GMM accurately recovers the underlying Gaussian components. 
   
   To assess whether the data follows a multivariate Gaussian distribution, we apply the 2D K-S test using the Python package [ndtest](https://github.com/syrte/ndtest). We conduct a bootstrap analysis with 200 trials, resampling data from the fitted GMMs and calculating the $p$-values for each sample. 
 
   <figure style="width:80%; margin:0 auto;">
-    <img src="test_gmm_p_values-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
-    <figcaption style="text-align:center; font-weight:normal"><b>Figure 5:</b> Distribution of $p$-values from 200 bootstrap trials of the 2D K-S test, comparing fitted GMM to synthetic data.</figcaption>
+    <img src="figures/test_gmm_p_values-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <figcaption style="text-align:center; font-weight:normal"><b>Figure 6:</b> Distribution of $p$-values from 200 bootstrap trials of the 2D K-S test, comparing fitted GMM to synthetic data.</figcaption>
   </figure>
 
-  Figure 5 shows the resulting uniform distribution of $p$-values between 0 and 1, which supports the null hypothesis, indicating that the data in Figure 2 is drawn from a multivariate Gaussian distribution, as expected.
+  Figure 6 shows the resulting uniform distribution of $p$-values between 0 and 1, which supports the null hypothesis, indicating that the data in Figure 2 is drawn from a multivariate Gaussian distribution, as expected.
+
+  We conclude that the GMM is capable of detecting Gaussian structures in multidimensional data. This sets up the foundation for applying this clustering technique to examine the underlying distribution of real-world data.
 
 </div>
 
@@ -329,11 +347,11 @@ $$
 We use data from the NASA Exoplanet Archive, taken as of March 19, 2025, which contains 38,157 referenced exoplanet parameter measurements and uncertainties for 5,856 exoplanet candidates. For this study, we focus on identifying clusters in the parameter space of orbital period ($P$) and planetary radius ($R$). To refine the dataset, we calculate the aggregate mean for the period and radius measurements of each exoplanet, excluding entries with undetermined values for either parameter. This results in a dataset of 4,407 exoplanets, whose period-radius distribution is shown in Figure 6, where clear clustering tendencies can be observed.
 
 <figure style="width:80%; margin:0 auto;">
-    <img src="exoplanet_period-radius-outliers-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
-    <figcaption style="text-align:center; font-weight:normal"><b>Figure 3:</b> BIC score with increasing cluster.</figcaption>
+    <img src="figures/exoplanet_period-radius-outliers-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <figcaption style="text-align:center; font-weight:normal"><b>Figure 7:</b> BIC scores for GMM applied to exoplanet data, calculated for both $\mathbf{P}_1$ and $\mathbf{P}_2$.</figcaption>
 </figure>
 
-Looking at Figure 6, we identify outlying exoplanets with radii around $R \sim 10^1 \ R_{\oplus}$ (Earth radius) and periods ranging from $P \sim 10^3 - 10^9 \text{ days}$, as well as exoplanets with $P \sim 10^1 \text{ days}$ and radii greater than $R \sim 5 \times 10^1 \ R_{\oplus}$.  These outliers could introduce noise that affects the GMM's ability to fit meaningful clusters, potentially leading to suboptimal convergence and distorted cluster parameters. To mitigate this, we formulate two outlier criteria, categorising the exoplanet data into two datasets. In one, we define parameter bounds within which we perform the GMM clustering, considering only data points in the region $0 \leq P \leq 2 \times 10^3$ days and $0 \leq R \leq 3 \times 10^1 \ R_{\oplus}$. We denote this sample $\mathbf{P}_1$, which includes 4383 exoplanets (24 are excluded). A second method makes use of the Mahalanobis distance, a statistical measure commonly used for detecting multivariate outliers in a dataset. It quantifies the distance between an observation and the mean of a distribution, accounting for the correlations between variables through the covariance matrix. Unlike the Euclidean distance, which treats each dimension independently, the Mahalanobis distance adjusts for the variability and correlation structure of the data. The Mahalanobis distance is computed as:
+Looking at Figure 7, we identify outlying exoplanets with radii around $R \sim 10^1 \ R_{\oplus}$ (Earth radius) and periods ranging from $P \sim 10^3 - 10^9 \text{ days}$, as well as exoplanets with $P \sim 10^1 \text{ days}$ and radii greater than $R \sim 5 \times 10^1 \ R_{\oplus}$. These outliers could introduce noise that affects the GMM's ability to fit meaningful clusters, potentially leading to suboptimal convergence and distorted cluster parameters. To mitigate this, we formulate two outlier criteria, categorising the exoplanet data into two datasets. In one, we define parameter bounds within which we perform the GMM clustering, considering only data points in the region $0 \leq P \leq 2 \times 10^3$ days and $0 \leq R \leq 3 \times 10^1 \ R_{\oplus}$. We denote this sample $\mathbf{P}_1$, which includes 4383 exoplanets (24 are excluded). A second method makes use of the Mahalanobis distance, a statistical measure commonly used for detecting multivariate outliers in a dataset. It quantifies the distance between an observation and the mean of a distribution, accounting for the correlations between variables through the covariance matrix. Unlike the Euclidean distance, which treats each dimension independently, the Mahalanobis distance adjusts for the variability and correlation structure of the data. The Mahalanobis distance is computed as:
 
 </div>
 
@@ -343,18 +361,34 @@ $$
 
 <div style="font-size:85%; line-height:150%">
 
-where $x$ is the vector of the observation, $m$ is the mean vector of the independent variables, and $C$ is the covariance matrix of the variables. A larger $D$ indicates that the point is farther from the centroid of the distribution, suggesting that it may be a multivariate outlier \parencite{Myung2000}. We apply this technique, considering points within the 97.5\% confidence interval as non-outliers. We denote this sample $\mathbf{P}_2$, which includes 4333 exoplanets (74 are excluded). The GMM is applied on both $\mathbf{P}_1$ and $\mathbf{P}_2$ to determine the optimal clusters for the exoplanet data, given the choice of outlier criteria. The bounds of both outlier criteria are shown in Figure 6. 
+where $x$ is the vector of the observation, $m$ is the mean vector of the independent variables, and $C$ is the covariance matrix of the variables. A larger $D$ indicates that the point is farther from the centroid of the distribution, suggesting that it may be a multivariate outlier. We apply this technique, considering points within the 97.5\% confidence interval as non-outliers. We denote this sample $\mathbf{P}_2$, which includes 4333 exoplanets (74 are excluded). The GMM is applied on both $\mathbf{P}_1$ and $\mathbf{P}_2$ to determine the optimal clusters for the exoplanet data, given the choice of outlier criteria. The bounds of both outlier criteria are shown in Figure 6. 
 
-We utilize the GMM implementation from the Python package scikit-learn \parencite{Pedregosa_2011}, initialising the cluster parameters using k-means. Additionally, we choose a covariance structure where each cluster is allowed its own general covariance matrix, enabling each cluster to have distinct shapes, orientations, and variances. For the GMM, 100 iterations of the EM algorithm are performed, or until convergence is achieved. The convergence criterion is monitored and reported by the model. 
+To apply the GMM to the exoplanet data and simplify plotting, we define our parameter space as the base-10 logarithms of the exoplanet radius and period, i.e., $x = \left(\log_{10}(P), \log_{10}(R)\right)$. We then apply a GMM to the datasets $\mathbf{P}_1$ and $\mathbf{P}_2$.
 
 <figure style="width:80%; margin:0 auto;">
-    <img src="test_gmm_convergence-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
-    <figcaption style="text-align:center; font-weight:normal"><b>Figure 7:</b> Natural log likelihood at each iteration step of the EM algorithm in an example application of the GMM to the data shown in Figure 3.</figcaption>
+    <img src="figures/exoplanet_gmm_BIC_score_error-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <figcaption style="text-align:center; font-weight:normal"><b>Figure 8:</b> BIC score with increasing cluster.</figcaption>
 </figure>
 
-Figure 7 shows an example plot of the natural log likelihood convergence through the EM-algorithm. It is easy to see that convergence is achieved after the 10th iteration of the EM algorithm, as the natural log likelihood does not increase significantly with further iterations. To select the best model, the GMM is refitted 100 times, and the parameters of the model with the highest likelihood given the data are stored. 
+We find the optimal number of clusters for both datasets by inspecting the BIC scores, shown in Figure f. For dataset $\mathbf{P}_1$, we observe a substantial decrease in the BIC score when increasing the number of clusters from $k=1$ to $k=2$, as well as from $k=2$ to $k=3$ and $k=3$ to $k=4$. However, beyond $k=4$, the change in BIC is negligible, indicating diminishing returns in model complexity. Based on this, we select $k=4$ as the optimal number of clusters for $\mathbf{P}_1$.  For dataset $\mathbf{P}_2$, we see a similar trend in the BIC score, continuing to decrease from $k=1$ until $k=4$. Since a lower BIC score indicates a better balance between model fit and complexity, we determine that $k=4$ is the most appropriate choice for both $\mathbf{P}_1$ and $\mathbf{P}_2$. Our use of BIC as a guiding tool for determining the optimal number of clusters reflects a subjective decision, acknowledging that the true underlying distribution of the data cannot be definitively determined. Therefore, while BIC provides a useful heuristic, its application in this context remains open to interpretation and potential inaccuracies.
 
-To determine the optimal number of Gaussian components, we calculate the BIC (Bayesian Information Criterion) score for the fitted GMM with increasing cluster components. Uncertainties in the BIC are estimated using 100 bootstrap trials, with resampling from the synthetic data distribution. 
+<figure style="width:80%; margin:0 auto;">
+    <img src="figures/exoplanet_clusters-gmm-bothcriteria-vertical-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <figcaption style="text-align:center; font-weight:normal"><b>Figure 9:</b> Top: Dataset $\mathbf{P}_1$ with 2$\sigma$ confidence ellipsoids from a fitted GMM, with optimal number of clusters $k$ = 4. Bottom: Dataset $\mathbf{P}_2$ with $\sigma$ confidence ellipsoids from a fitted GMM, with optimal number of clusters $k$ = 4.</figcaption>
+</figure>
+
+Figure 9 shows the two datasets with overlaid $1\sigma$ confidence ellipsoids for the fitted GMM cluster components. In examining the shape of the confidence ellipsoids in Figure 9, we observe that the choice of outlier detection method influences the configuration of the Gaussian components. Specifically, the confidence ellipsoids for clusters in similar regions exhibit distinct covariance matrices, depending on the outlier criterion applied. We see that the manual threshold criterion permits more data points to remain outside a well-defined boundary, resulting in clusters that are more loosely defined by the GMM. In contrast, the Mahalanobis distance criterion removes a greater number of peripheral data points, leading to a more constrained definition of cluster boundaries. However, as the clusters determined by the model remain spatially similar, it is not possible to conclude that one outlier method is definitively superior in accurately defining the GMM components within the dataset.
+
+We verify the nature of the exoplanet data distribution by performing a two-dimensional K-S test as described previously. Specifically, we sample data points from the fitted GMM and compare them with the exoplanet data distribution by computing the corresponding $p$-values. To ensure statistical robustness, we conduct 200 bootstrap trials of the 2D K-S test for these two distributions. 
+
+<figure style="width:80%; margin:0 auto;">
+    <img src="figures/exoplanet_p_values_comparison-1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <figcaption style="text-align:center; font-weight:normal"><b>Figure 10:</b> Distribution of $p$-values from 200 bootstrap trials of the 2D K-S test, comparing the fitted GMM to the source exoplanet period-radius data.</figcaption>
+</figure>
+
+Figure 10 presents the resultant distribution of $p$-values for both datasets. For $\mathbf{P}_1$, we observe that all trials fall within the $0\leq p \leq 0.05$ bin, suggesting that the null hypothesis—that the data is drawn from the same distribution as the fitted GMM samples—is unlikely. Similarly, for $\mathbf{P}_2$, the majority of $p$-values fall in the $0\leq p \leq 0.05$ bin, decreasing until no trials yield a $p>0.2$. This indicates that there is little statistical support for the assumption that the dataset follows Gaussian clusters.
+
+This result contrasts with our validation on synthetic data, where the GMM successfully recovered the underlying cluster structure, yielding a uniform $p$-value distribution consistent with the null hypothesis. The failure to obtain a similar $p$-value distribution for the observed exoplanet period-radius data suggests that it is not fully described by a multivariate Gaussian distribution. However, despite this limitation, the GMM still provides an optimal partitioning of the data into distinct components, which may capture meaningful structures even if the clusters themselves are not strictly Gaussian.
 
 </div>
 
@@ -362,9 +396,11 @@ To determine the optimal number of Gaussian components, we calculate the BIC (Ba
 
 ##### Discussion
 
-<div style="font-size:85%">
+<div style="font-size:85%; line-height:150%">
 
-  While the GMM proved effective in locating clusters in data that is known to be Gaussian distributed, applying it to the exoplanet data reveals a potential limitation. Specifically, the identified Gaussian clusters identified may be artifacts arising from approximating a non-Gaussian data distribution. This can be influenced by selection effects or biases in the observed data, which may lead to artificial clustering. An approach to address this caveat when using GMMs is to compare the identified clusters with existing observational evidence  from other studies (see Lee et al., 2012 on using GMMs to find empirical categorisation bounds for pulsars). In doing so, one can assess whether the fitted clusters reflect genuinely Gaussian distributions or are simply approximations from model limitations. Extensions to this project would could explore alternative outlier detection methods to improve data preprocessing for GMMs, as well as testing the convergence of GMMs across various datasets. Exploring other model selection criteria, such as the Akaike Information Criterion (Akaike, 1974), could provide more reliable methods for determining an optimal distribution model. Furthermore, testing non-Gaussian mixture models, such as Dirichlet Process Mixture Models (Li et al., 2019) or Student’s t-mixture models (Gerogiannis et al., 2009), could offer a more flexible approach to better capture the complex underlying distributions in exoplanet data.
+  While the GMM proved effective in locating clusters in data that is known to be Gaussian distributed, applying it to the exoplanet data reveals a potential limitation. Specifically, the identified Gaussian clusters identified may be artifacts arising from approximating a non-Gaussian data distribution. This can be influenced by selection effects or biases in the observed data, which may lead to artificial clustering. An approach to address this caveat when using GMMs is to compare the identified clusters with existing observational evidence  from other studies (see Lee et al., 2012 on using GMMs to find empirical categorisation bounds for pulsars). In doing so, one can assess whether the fitted clusters reflect genuinely Gaussian distributions or are simply approximations from model limitations. 
+  
+  Extensions to this project would could explore alternative outlier detection methods to improve data preprocessing for GMMs, as well as testing the convergence of GMMs across various datasets. Exploring other model selection criteria, such as the Akaike Information Criterion (Akaike, 1974), could provide more reliable methods for determining an optimal distribution model. Furthermore, testing non-Gaussian mixture models, such as Dirichlet Process Mixture Models (Li et al., 2019) or Student’s t-mixture models (Gerogiannis et al., 2009), could offer a more flexible approach to better capture the complex underlying distributions in exoplanet data.
 
 </div>
 
@@ -372,7 +408,7 @@ To determine the optimal number of Gaussian components, we calculate the BIC (Ba
 
 ##### Conclusion
 
-<div style="font-size:85%">
+<div style="font-size:85%; line-height:150%">
 
   In this work, we established the mathematical framework of GMMs and the two-dimensional K-S test, demonstrating their effectiveness through validation on synthetic Gaussian data. We applied these methods to exoplanet period-radius data, and identified an optimal Gaussian mixture representation of the data. However, the K-S test indicates that the data is not consistent with a purely Gaussian origin, suggesting that the underlying distribution of exoplanet populations may be more complex than initially assumed. These findings emphasise the need for further research into more complex models that could better describe the true structure of multivariate exoplanetary datasets.
 
@@ -380,12 +416,6 @@ To determine the optimal number of Gaussian components, we calculate the BIC (Ba
 
 ---
 
-<!-- ##### References
-
-@something
-
---- -->
-
 ##### Related material
 
-+ [Full report (.pdf)](gmm_clustering_report.pdf)
++ [Original report (.pdf)](gmm_clustering_report.pdf)
