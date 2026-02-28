@@ -55,7 +55,7 @@ params:
     profileMode:
           enabled: true
           title: Mark Beyer Stjerne
-          subtitle: "I am a Master's student in astrophysics at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the [<ins>Cosmic Dawn Center</ins>](https://cosmicdawn.dk). Originally from Sydney, Australia, I'm a nerd for space, STEM, and linguistics."
+          subtitle: "I am a master's student in astrophysics at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the [<ins>Cosmic Dawn Center</ins>](https://cosmicdawn.dk). Originally from Sydney, Australia, I'm a nerd for space, STEM, and linguistics."
           imageUrl: "mark.png"
           imageWidth: 160
           imageHeight: 160
@@ -99,7 +99,7 @@ params:
         disableScrollBarStyle: false
     cover:
         hiddenInList: true
-        hiddenInSingle: true
+        hiddenInSingle: false
     label:
       text: "Home"
       icon: favicon.ico
