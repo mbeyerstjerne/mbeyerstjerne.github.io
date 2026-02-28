@@ -1,4 +1,4 @@
 ---
-title: "Projects"
-description: "Projects by Mark Beyer Stjerne."
+title: "MSc Projects"
+description: "MSc projects by Mark Beyer Stjerne."
 ---

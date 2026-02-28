@@ -1,11 +1,14 @@
 ---
 title: "Classifying galaxies using convolutional neural networks" 
 date: 2025-05-20
+tags: ["Machine learning", "Astrophysics"]
+author: [""]
 description: "This project attempts to mimic the way humans visibly categorise galaxies by using a convolutional neural network." 
 summary: "This project attempts to mimic the way humans visibly categorise galaxies by using a convolutional neural network." 
+weight: 1
 cover:
-    # image: "galaxy_classification.png"
-    # alt: "Some Uses For Olive Oil"
+    image: "galaxy_classification.png"
+    alt: "Some Uses For Olive Oil"
     relative: true
 ---
 
@@ -15,9 +18,7 @@ cover:
 
 <div style="font-size:85%; line-height:150%">
 
-  This project looks at the complex task of computer-based classification of images, by means of a convolutional neural network. This was done as part of a final group project for the course <a href="https://kurser.ku.dk/course/nfyk15002u">Applied Machine learning</a>, run by A. Prof. Troels Petersen (University of Copenhagen) between April and May of 2025.
-
-  Please note that this portfolio is still under construction as of 10/12/2025, where I hope to add some more detail later on.
+  This project looks at the complex task of computer-based classification of images, by means of a convolutional neural network. This was done as part of a final group project for the course <a href="https://kurser.ku.dk/course/nfyk15002u">Applied Machine Learning</a>, run by A. Prof. Troels Petersen (University of Copenhagen) between April and May of 2025.
 
 </div>
 
@@ -27,14 +28,14 @@ cover:
 
 <div style="font-size:85%; line-height:150%">
 
-  <figure style="width:100%; margin:0 auto;">
-      <img src="galaxy_examples.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
-      <figcaption style="text-align:center; font-weight:normal">Example of galaxies of differing morphology.</figcaption>
-  </figure>
-
   - Galaxies have complicated, individual morphologies
   - CNNs offer a promising approach to image-based pattern recognition
   - Galaxy surveys offer a wealth of image data, and citizen science projects allow us to label these galaxies and their features
+  
+  <figure style="width:80%; margin:0 auto;">
+      <img src="galaxy_examples.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+      <figcaption style="text-align:center; font-weight:normal">Example of galaxies of differing morphology.</figcaption>
+  </figure>
   
   Question: <em> Can we train a model that can classify or identify features from survey images of galaxies?</em>
 
@@ -46,13 +47,13 @@ cover:
 
 <div style="font-size:85%; line-height:150%">
 
-Data sourced from the Dark Energy Camera Legacy Survey (DECaLS):
+Data was sourced from the Dark Energy Camera Legacy Survey (DECaLS):
 - Data Release 5 (DR5)
 - Dataset consist of 253,286 survey images of galaxies
 - Image size: 424 x 424 x 3 (RGB)
 - Pre-cropped and centered on objects
 
-<figure style="width:100%; margin:0 auto;">
+<figure style="width:80%; margin:0 auto;">
     <img src="decals_images_examples.png" alt="drawing" style="display:block; margin:0 auto; width:50%;">
     <figcaption style="text-align:center; font-weight:normal">Example of images from the DECaLS dataset.</figcaption>
 </figure>

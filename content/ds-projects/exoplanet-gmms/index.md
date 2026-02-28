@@ -1,16 +1,16 @@
 ---
 title: "Applying Gaussian mixture models to exoplanet data" 
 date: 2025-03-21
-# tags: ["philology","oleic science","history of oil","Mediterranean world"]
-# author: ["Detlev Amadeus Unterholzer","Moritz-Maria von Igelfeld"]
+tags: ["Applied statistics", "Astrophysics"]
+author: [""]
 description: "This project examines the applications of Gaussian mixture models to exoplanet population data." 
 summary: "This project examines the applications of Gaussian mixture models to exoplanet population data." 
 cover:
-    # image: "figures/exoplanet_clusters-1.png"
-    # alt: "Some Uses For Olive Oil"
+    image: "figures/exoplanet_clusters-1.png"
+    alt: "Some Uses For Olive Oil"
     relative: true
 draft: false
-weight: 1
+weight: 10
 # editPost:
 #     URL: "https://github.com/pmichaillat/hugo-website"
 #     Text: "Journal of Oleic Science"

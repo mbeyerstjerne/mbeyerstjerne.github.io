@@ -1,8 +1,8 @@
 ---
 title: "Master's thesis: Mid- and far-infrared dust and gas properties of distant quiescent galaxies" 
-date: 2025-09-10
+date: 2025-09-01
 # tags: ["philology","oleic science","history of oil","Mediterranean world"]
-author: ["Mark Beyer Stjerne"]
+author: [""]
 description: "This page provides the abstract for what is to be my master's thesis project." 
 summary: "This page provides the abstract for what is to be my master's thesis project." 
 cover:

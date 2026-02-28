@@ -18,9 +18,12 @@ menu:
         - name: Research Projects
           url: research-projects/
           weight: 3
-        - name: Data Science Projects
+        - name: MSc Projects
           url: ds-projects/
           weight: 4
+        - name: Topics
+          url: tags/
+          weight: 5
         
 
 params:
@@ -30,18 +33,20 @@ params:
     DateFormat: "January 2006"
     defaultTheme: light
     hideFooter: false
-    disableThemeToggle: true
+    disableThemeToggle: false
+    hideMeta: false
     ShowShareButtons: false
-    ShowReadingTime: false
+    ShowReadingTime: true
     disableSpecial1stPost: true
-    disableAnchoredHeadings: true
-    ShowPostNavLinks: false
-    ShowBreadCrumbs: false
+    disableAnchoredHeadings: false
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["about me", "research projects", "data science projects"]
+    MainSections: ["about me", "research projects", "masters projects", "tags"]
     ShowToc: false
-    disableScrollToTop: true
+    # ShowPostMeta: true
+    disableScrollToTop: false
     TocOpen: true
     ShowWordCount: false
     UseHugoToc: true
@@ -50,7 +55,7 @@ params:
     profileMode:
           enabled: true
           title: Mark Beyer Stjerne
-          subtitle: "I am a Master's student in astrophysics at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the [<ins>Cosmic Dawn Center</ins>](https://cosmicdawn.dk). Originally from Sydney, Australia, I'm a nerd for space, STEM, and linguistics. This page is currently under some hefty renovation, so stay tuned!"
+          subtitle: "I am a Master's student in astrophysics at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the [<ins>Cosmic Dawn Center</ins>](https://cosmicdawn.dk). Originally from Sydney, Australia, I'm a nerd for space, STEM, and linguistics."
           imageUrl: "mark.png"
           imageWidth: 160
           imageHeight: 160
@@ -59,12 +64,14 @@ params:
               url: about-me/
             - name: Research Projects
               url: research-projects/
-            - name: Data Science Projects
+            - name: MSc Projects
               url: ds-projects/
+            - name: Topics
+              url: tags/
 
     socialIcons:
-        # - name: CV
-        #   url: cv.pdf
+        - name: CV
+          url: industry_cv.pdf
         - name: Email
           url: mailto:mbeyerstjerne@gmail.com
         # - name: Zoom
@@ -89,12 +96,12 @@ params:
         #   url: https://bsky.app/profile/pmichaillat.bsky.social
 
     assets:
-        disableScrollBarStyle: true
+        disableScrollBarStyle: false
     cover:
-        hiddenInList: false
+        hiddenInList: true
         hiddenInSingle: true
     label:
-      text: "Mark Beyer Stjerne"
+      text: "Home"
       icon: favicon.ico
       iconHeight: 18
 
