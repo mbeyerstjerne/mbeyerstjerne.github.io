@@ -37,7 +37,7 @@ As this project is still progressing, please keep an eye out for updates, or <a 
 <div style="font-size:85%; line-height:150%">
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="JADES-GS-z701qu.jpg" style="display:block; margin:0 auto; width:80%;">
+    <img src="figures/JADES-GS-z701qu.jpg" style="display:block; margin:0 auto; width:80%;">
     <figcaption style="text-align:center; font-weight:normal">JWST image of JADES-GS-z7-01-QU, the oldest "dead" galaxy discovered thus far (as of 6 March 2024), with an inset to show the galaxy itself.</figcaption>
 </figure>
 
