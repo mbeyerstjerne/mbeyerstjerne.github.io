@@ -9,6 +9,7 @@ summary: "This is an ongoing research project on which I am the proposal co-inve
     # image: "paper1.png"
     # alt: "Some Uses For Olive Oil"
     # relative: true
+draft: false
 # editPost:
 #     URL: "https://github.com/pmichaillat/hugo-website"
 #     Text: "Journal of Oleic Science"
@@ -47,14 +48,14 @@ As this project is still progressing, please keep an eye out for updates, or <a 
 The study of comets can potentially yield a wealth of information about planetary formation in the universe. Each comet preserves a chemical record of the conditions under which it was formed, and by studying the chemical composition of these objects, we can probe the conditions that led to the birth of our Solar System. Interstellar comets are special in that they originate from outside our solar system, carrying its own unique chemical footprint from when it was formed. By studying these objects as they visit our neighbourhood, we aim to learn more about the conditions of extrasolar planetary formation.
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="3I-ATLAS_DRS_2025-07-02_crop.gif" style="display:block; margin:0 auto; width:70%;">
+    <img src="figures/3I-ATLAS_DRS_2025-07-02_crop.gif" style="display:block; margin:0 auto; width:70%;">
     <figcaption style="text-align:center; font-weight:normal">Animation of 3I/ATLAS moving across a field of trailed stars.</figcaption>
 </figure>
 
 The interstellar comet 3I/ATLAS was discovered on <a href="https://science.nasa.gov/blogs/planetary-defense/2025/07/02/nasa-discovers-interstellar-comet-moving-through-solar-system/">July 1st, 2025</a> by the Asteroid Terrestrial-impact Last Alert System (ATLAS). It is the third such object to be discovered (hence the "3I") after <a href="https://science.nasa.gov/solar-system/comets/oumuamua/">1I/'Oumuamua</a> in October 2017 and <a href="https://science.nasa.gov/solar-system/comets/2i-borisov/">2I/Borisov</a> in August 2019.
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="3I_ATLAS_animation3.gif" style="display:block; margin:0 auto; width:70%;">
+    <img src="figures/3I_ATLAS_animation3.gif" style="display:block; margin:0 auto; width:70%;">
     <figcaption style="text-align:center; font-weight:normal">Animation of the journey of 3I/ATLAS.</figcaption>
 </figure>
 
