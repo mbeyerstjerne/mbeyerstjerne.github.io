@@ -71,7 +71,7 @@ params:
 
     socialIcons:
         - name: CV
-          url: industry_cv.pdf
+          url: cv.pdf
         - name: Email
           url: mailto:mbeyerstjerne@gmail.com
         # - name: Zoom
@@ -101,7 +101,7 @@ params:
         hiddenInList: true
         hiddenInSingle: false
     label:
-      text: "Home"
+      text: "Mark Beyer Stjerne"
       icon: favicon.ico
       iconHeight: 18
 
