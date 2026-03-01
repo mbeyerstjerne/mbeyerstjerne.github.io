@@ -1,7 +1,7 @@
 ---
 title: "Classifying galaxies using convolutional neural networks" 
 date: 2025-05-20
-tags: ["Machine learning", "Astrophysics"]
+tags: ["Machine learning"]
 author: [""]
 description: "This project attempts to mimic the way humans visibly categorise galaxies by using a convolutional neural network." 
 summary: "This project attempts to mimic the way humans visibly categorise galaxies by using a convolutional neural network." 
@@ -33,7 +33,7 @@ cover:
   - Galaxy surveys offer a wealth of image data, and citizen science projects allow us to label these galaxies and their features
   
   <figure style="width:80%; margin:0 auto;">
-      <img src="galaxy_examples.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+      <img src="figures/galaxy_examples.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
       <figcaption style="text-align:center; font-weight:normal">Example of galaxies of differing morphology.</figcaption>
   </figure>
   
@@ -54,7 +54,7 @@ Data was sourced from the Dark Energy Camera Legacy Survey (DECaLS):
 - Pre-cropped and centered on objects
 
 <figure style="width:80%; margin:0 auto;">
-    <img src="decals_images_examples.png" alt="drawing" style="display:block; margin:0 auto; width:50%;">
+    <img src="figures/decals_images_examples.png" alt="drawing" style="display:block; margin:0 auto; width:50%;">
     <figcaption style="text-align:center; font-weight:normal">Example of images from the DECaLS dataset.</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ Challenges regarding the data:
 Now that we have the 'features' data in mind (i.e. the DECaLS image data), we need the labels to match. To do so, we make use of <a href="https://www.zooniverse.org/projects/zookeeper/galaxy-zoo/">Galaxy Zoo</a>:
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="galaxyzoo_site_example.png" alt="drawing" style="display:block; margin:0 auto; width:100%;">
+    <img src="figures/galaxyzoo_site_example.png" alt="drawing" style="display:block; margin:0 auto; width:100%;">
     <figcaption style="text-align:center; font-weight:normal">Still from the Galaxy Zoo site.</figcaption>
 </figure>
 
@@ -78,7 +78,7 @@ Now that we have the 'features' data in mind (i.e. the DECaLS image data), we ne
 - Total votes per galaxy cluster around 5 or 40 (Some images with high ML potential have been ‘promoted’)
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="galaxyzoo_schema.png" alt="drawing" style="display:block; margin:0 auto; width:50%;">
+    <img src="figures/galaxyzoo_schema.png" alt="drawing" style="display:block; margin:0 auto; width:50%;">
     <figcaption style="text-align:center; font-weight:normal">Voting scheme for the Galaxy Zoo DECaLS 5 (GZD-5) campaign.</figcaption>
 </figure>
 
@@ -132,7 +132,7 @@ Further preprocessing required:
 *<em>Provided that the maximum class prediction probability exceeded a threshold. </em>
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="galaxyzoo_schema_modified.png" alt="drawing" style="display:block; margin:0 auto; width:50%;">
+    <img src="figures/galaxyzoo_schema_modified.png" alt="drawing" style="display:block; margin:0 auto; width:50%;">
     <figcaption style="text-align:center; font-weight:normal">Voting scheme for the Galaxy Zoo DECaLS 5 (GZD-5) campaign, with modifications made to show how hard class labels were encoded to data.</figcaption>
 </figure>
 
@@ -153,7 +153,7 @@ Further preprocessing required:
 - Output is a softmax probability of the 4 encoded classes: Elliptical, Lenticular, Spiral, and Irregular.
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="cnn_graph.png" alt="drawing" style="display:block; margin:0 auto; width:50%;">
+    <img src="figures/cnn_graph.png" alt="drawing" style="display:block; margin:0 auto; width:50%;">
     <figcaption style="text-align:center; font-weight:normal">Diagram of the CNN constructed for multi-class classification.</figcaption>
 </figure>
 
@@ -168,12 +168,12 @@ Further preprocessing required:
 Looking at both the confusion matrix and learning curves for this CNN:
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="confusion_matrix_1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <img src="figures/confusion_matrix_1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
     <figcaption style="text-align:center; font-weight:normal">Diagram of the CNN constructed for multi-class classification. Taken from a 20% testing set derived from augmented 4-class data.</figcaption>
 </figure>
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="accuracy_loss_plot.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <img src="figures/accuracy_loss_plot.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
     <figcaption style="text-align:center; font-weight:normal">Training and validation accuracy and loss plots for multi-class classification .</figcaption>
 </figure>
 
@@ -182,8 +182,8 @@ As can be seen in the learning curves, the CNN appears to not be overfitting, wh
 We can also test how effective the CNN is at predicting classes for some example images:
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="cnn_class_example1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
-    <img src="cnn_class_example2.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <img src="figures/cnn_class_example1.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <img src="figures/cnn_class_example2.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
     <figcaption style="text-align:center; font-weight:normal">Predicted label probabilities for four galaxies.</figcaption>
 </figure>
 
@@ -202,7 +202,7 @@ It is worth noting that the effectiveness of the classifier is predicated on how
 An alternative approach to removing images that do not have high confidence are to define a peripheral 'uncertain' category to be those with not a high confidence in any particular class ($<0.6$). Repeating the classification on a common validation set yields the following confusion matrix:
 
 <figure style="width:100%; margin:0 auto;">
-    <img src="confusion_matrix_2.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
+    <img src="figures/confusion_matrix_2.png" alt="drawing" style="display:block; margin:0 auto; width:80%;">
     <figcaption style="text-align:center; font-weight:normal">Diagram of the CNN constructed for multi-class classification, with addition of an 'uncertain' class.</figcaption>
 </figure>
 
@@ -214,4 +214,4 @@ We see that the model has capabilities to identify morphological features, but t
 
 ##### Related material
 
-- [Original project slides (.pdf)](aml_galaxy_classification_slides.pdf)
+- [Original project slides (.pdf)](figures/aml_galaxy_classification_slides.pdf)
