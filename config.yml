@@ -43,7 +43,7 @@ params:
     ShowBreadCrumbs: true
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["about me", "research projects", "masters projects", "tags"]
+    MainSections: ["about-me", "research-projects", "ds-projects", "tags"]
     ShowToc: false
     # ShowPostMeta: true
     disableScrollToTop: false
