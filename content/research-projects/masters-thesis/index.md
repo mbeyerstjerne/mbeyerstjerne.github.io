@@ -36,6 +36,11 @@ As this project is still progressing, please keep an eye out for updates, or <a 
 
 <div style="font-size:85%; line-height:150%">
 
+<figure style="width:100%; margin:0 auto;">
+    <img src="JADES-GS-z701qu.jpg" style="display:block; margin:0 auto; width:80%;">
+    <figcaption style="text-align:center; font-weight:normal">JWST image of JADES-GS-z7-01-QU, the oldest "dead" galaxy discovered thus far (as of 6 March 2024), with an inset to show the galaxy itself.</figcaption>
+</figure>
+
 In studying the evolution of galaxies, we observe a bimodality present in the galaxy population, distinguishing between two fundamental classes: younger galaxies with a high gas content and high star formation rates—referred to as star-forming galaxies—and older galaxies with less gas and low star formation rates, known as quenched galaxies. Understanding the mechanisms that halt star formation—commonly called galaxy quenching—is therefore vital for building an overall picture of galaxy evolution.
 
 Recent observations using the James Webb Space Telescope (JWST) have extended the discovery frontier of quenched, “red-and-dead” galaxies to much earlier in cosmic time than expected, back to when the Universe was less than 700 million years old. This breakthrough offers a timely opportunity to investigate how galaxy quenching occurs at high redshift, and how it differs from quenching in the present-day Universe.
