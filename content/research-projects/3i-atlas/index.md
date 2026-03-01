@@ -1,10 +1,11 @@
 ---
 title: "Stellar occultations of 3I/ATLAS" 
 date: 2025-11-01
-tags: ["Astrophysics", "Observing"]
+tags: ["Astrophysics", "Observational Astronomy", "Spectroscopy", "Time-Domain Astronomy", "Data Processing", "Python", "Research"]
 author: [""]
 description: "This is an ongoing research project on which I am the proposal co-investigator at the Nordic Optical Telescope." 
 summary: "This is an ongoing research project on which I am the proposal co-investigator at the Nordic Optical Telescope." 
+weight: 75
 # cover:
     # image: "paper1.png"
     # alt: "Some Uses For Olive Oil"

@@ -1,7 +1,7 @@
 ---
 title: "Processing astronomical data: Imaging, spectroscopy, photometry" 
 date: 2024-11-08
-tags: ["Data processing", "Astrophysics"]
+tags: ["Astrophysics", "Spectroscopy", "Python", "Data Processing", "Pipeline Development"]
 author: [""]
 description: "This project involves the processing of imaging and spectroscopic data in order to make basic astrophysical measurements."
 summary: "This project involves the processing of imaging and spectroscopic data in order to make basic astrophysical measurements."

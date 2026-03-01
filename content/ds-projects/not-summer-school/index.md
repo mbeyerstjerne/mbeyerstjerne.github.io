@@ -1,11 +1,11 @@
 ---
 title: "Summer school at the Nordic Optical Telescope, La Palma" 
 date: 2025-08-20
-tags: ["Telescopes", "Astrophysics", "Data processing"]
+tags: ["Astrophysics", "Observational Astronomy", "Data Processing", "Data Analysis", "Spectroscopy", "Python", "Scientific Writing"]
 author: [""]
 description: "I spent 1 week at the Roque del los Muchachos Observatory in La Palma, observing with the 2.56m Nordic Optical Telescope (NOT)." 
 summary: "I spent 1 week at the Roque del los Muchachos Observatory in La Palma, observing with the 2.56m Nordic Optical Telescope (NOT)." 
-weight: 1
+weight: 85
 cover:
     image: "IMG_8959.jpg"
     alt: "The 2025 NOT Summer School group, standing in front of the NOT."

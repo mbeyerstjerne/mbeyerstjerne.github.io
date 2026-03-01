@@ -1,10 +1,11 @@
 ---
 title: "Master's thesis: Mid- and far-infrared dust and gas properties of distant quiescent galaxies" 
 date: 2025-09-01
-# tags: ["philology","oleic science","history of oil","Mediterranean world"]
+tags: ["Astrophysics", "Extragalactic Astrophysics", "Research", "Scientific Writing", "Data Processing", "Data Analysis", "Pipeline Development", "Python", "Spectroscopy", "JWST", "ALMA"]
 author: [""]
 description: "This page provides the abstract for what is to be my master's thesis project." 
 summary: "This page provides the abstract for what is to be my master's thesis project." 
+weight: 80
 cover:
     # image: "paper1.png"
     # alt: "Some Uses For Olive Oil"

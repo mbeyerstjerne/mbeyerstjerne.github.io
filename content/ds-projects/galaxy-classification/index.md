@@ -1,11 +1,11 @@
 ---
 title: "Classifying galaxies using convolutional neural networks" 
 date: 2025-05-20
-tags: ["Machine learning"]
+tags: ["Machine Learning", "Data Analysis", "Python"]
 author: [""]
 description: "This project attempts to mimic the way humans visibly categorise galaxies by using a convolutional neural network." 
 summary: "This project attempts to mimic the way humans visibly categorise galaxies by using a convolutional neural network." 
-weight: 1
+weight: 90
 cover:
     image: "galaxy_classification.png"
     alt: "Some Uses For Olive Oil"

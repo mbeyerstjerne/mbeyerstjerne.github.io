@@ -1,7 +1,7 @@
 ---
 title: "Applying Gaussian mixture models to exoplanet data" 
 date: 2025-03-21
-tags: ["Applied statistics", "Astrophysics"]
+tags: ["Statistical Modelling", "Data Analysis", "Python", "Scientific Writing"]
 author: [""]
 description: "This project examines the applications of Gaussian mixture models to exoplanet population data." 
 summary: "This project examines the applications of Gaussian mixture models to exoplanet population data." 
@@ -10,7 +10,7 @@ cover:
     alt: "Some Uses For Olive Oil"
     relative: true
 draft: false
-weight: 10
+weight: 95
 # editPost:
 #     URL: "https://github.com/pmichaillat/hugo-website"
 #     Text: "Journal of Oleic Science"
