@@ -6,10 +6,10 @@ author: [""]
 description: "This project attempts to mimic the way humans visibly categorise galaxies by using a convolutional neural network." 
 summary: "This project attempts to mimic the way humans visibly categorise galaxies by using a convolutional neural network." 
 weight: 90
-cover:
-    image: "galaxy_classification.png"
-    alt: "Some Uses For Olive Oil"
-    relative: true
+# cover:
+#     image: "galaxy_classification.png"
+#     alt: "Some Uses For Olive Oil"
+#     relative: true
 ---
 
 ---
