@@ -1,0 +1,93 @@
+{{- define "main" }}
+
+<main class="custom-home">
+
+    <section class="home-hero">
+        <div class="hero-background"></div>
+    </section>
+    
+    <section class="home-profile">
+
+        <div class="home-profile-image">
+            <img src="/mark.png" alt="Mark Beyer Stjerne">
+        </div>
+
+        <h1>Mark Beyer Stjerne</h1>
+
+        <p class="home-subtitle">
+            MSc Physics · Astrophysics · Data Analysis
+        </p>
+
+        <p class="home-intro">
+            Physics graduate specialising in data analysis, scientific computing and 
+            quantitative problem-solving, with a background in observational astronomy.
+            My work focuses on extracting physical insights from
+            large, complex datasets. Originally from Sydney, Australia,
+            I’m a nerd for space, STEM, and linguistics.
+        </p>
+
+        <div class="home-social">
+            {{- range site.Params.socialIcons }}
+            <a href="{{ .url }}"
+               {{ if not (hasPrefix .url "mailto:") }}target="_blank" rel="noopener noreferrer"{{ end }}
+               aria-label="{{ .name }}"
+               title="{{ .name }}">
+                {{ partial "svg.html" (dict "name" .name) }}
+            </a>
+            {{- end }}
+        </div>
+
+    </section>
+
+
+    <section class="home-work">
+
+        <h2>Selected Works</h2>
+
+        {{ range where (where site.RegularPages "Section" "projects") "Params.featured" true }}
+
+        <article class="home-project-entry">
+
+            <div class="project-content">
+
+                <h3>
+                    <a href="{{ .RelPermalink }}">
+                        {{ .Title }}
+                    </a>
+                </h3>
+
+                <div class="project-tags">
+
+                    <span class="project-year">
+                        {{ .Date.Format "January 2006" }}
+                    </span>
+
+                    {{ with .Params.tags }}
+                    {{ range . }}
+                    <span>{{ . }}</span>
+                    {{ end }}
+                    {{ end }}
+
+                </div>
+
+                {{ with .Description }}
+                <p>{{ . }}</p>
+                {{ else }}
+                <p>{{ .Summary }}</p>
+                {{ end }}
+
+            </div>
+
+        </article>
+
+        {{ end }}
+
+    <div class="all-work">
+        <a href="{{ "/projects/" | relURL }}">See all projects →</a>
+    </div>
+
+    </section>
+
+</main>
+
+{{- end }}

@@ -1,0 +1,355 @@
+.custom-home {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.home-profile {
+    padding: 45px 20px 60px;
+    text-align: left;
+}
+
+.home-profile-image img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.home-profile h1 {
+    font-size: 2.1rem;
+    margin: 0 0 8px;
+}
+
+.home-subtitle {
+    font-size: 1.1rem;
+    margin: 0 0 22px;
+    opacity: 0.75;
+}
+
+.home-intro {
+    font-size: 1.0rem;
+    max-width: 650px;
+    margin: 0 0 25px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.home-social {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.home-social a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.home-social svg {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* Recent work */
+
+.home-work {
+    padding: 80px 20px 40px;
+}
+
+.home-work h2 {
+    margin-bottom: 30px;
+}
+
+/* Projects archive */
+
+.projects-page {
+    padding-top: 10px;
+}
+
+.project-year-group {
+    margin-top: 55px;
+}
+
+.project-year-heading {
+    margin: 0 0 20px;
+    font-size: 1.4rem;
+}
+
+.project-entry {
+    padding: 22px 0;
+    border-top: 1px solid var(--border);
+}
+
+.project-content h3 {
+    margin: 0 0 8px;
+}
+
+.project-content p {
+    margin: 10px 0 0;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.project-tags span:not(:last-child)::after {
+    content: " · ";
+    margin-left: 6px;    
+}
+
+@media (max-width: 600px) {
+    .project-entry {
+        padding: 18px 0;
+    }
+}
+
+.project-year {
+    opacity: 0.6;
+    font-size: 0.95rem;
+}
+
+.project-content h3 {
+    margin: 0 0 8px;
+}
+
+.project-content p {
+    margin: 10px 0 0;
+    font-size: 0.9rem;
+}
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.project-tags span:not(:last-child)::after {
+    content: "· ";
+    margin-left: 6px;
+}
+
+.project-tags span {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.projects-page h1 {
+    margin-bottom: 30px;
+    margin-top: -30spx;
+}
+
+@media (max-width: 600px) {
+
+    .home-profile {
+        padding-top: 30px;
+    }
+
+    .project-entry {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+}
+
+.all-work {
+    padding: 30px 0 10px;
+}
+
+.all-work a {
+    font-weight: 500;
+}
+
+.projects-page .project-entry {
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+.projects-page .project-content h2 {
+    margin: 0 0 8px;
+}
+
+.header .logo a {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.header .logo a span {
+    font-weight: 400;
+}
+
+/* Hero background */
+
+.home-hero {
+    position: relative;
+    margin-bottom: 60;
+    margin-top: 40px;
+}
+
+.hero-background {
+    height: 190px;
+    width: 100%;
+    background-image: url("/hero.jpg");
+    background-size: cover;
+    background-position: 35% 40%;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+
+/* Make the profile overlap the bottom of the hero */
+
+.home-profile {
+    position: relative;
+    margin-top: -105px;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.home-profile-image {
+    position: relative;
+    z-index: 2;
+}
+
+.home-profile-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    border: 4px solid var(--theme);
+}
+
+.back-to-projects {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.back-to-projects:hover {
+    opacity: 1;
+}
+
+.post-content h5 {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(165, 165, 165);
+}
+
+/* Homepage project entries */
+
+.home-project-entry {
+    padding: 25px 0;
+    border-top: 1px solid var(--border);
+}
+
+.home-project-entry .project-content h3 {
+    margin: 0 0 8px;
+}
+
+.home-project-entry .project-content p {
+    margin: 10px 0 0;
+}
+
+.home-project-entry .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.home-project-entry .project-tags span {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.home-project-entry .project-tags span:not(:last-child)::after {
+    content: "·";
+    margin-left: 8px;
+    margin-right: 0px;
+}
+
+.home-project-entry .project-tags .project-year {
+    font-weight: 600;
+    opacity: 1;
+    margin-right: 4px;
+}
+
+.post-title {
+    font-size: 2rem;
+}
+
+.project-topics {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+.project-topics-label {
+    font-weight: 600;
+    opacity: 1;
+    margin-right: 8px;
+}
+
+.project-topics span:not(.project-topics-label):not(:last-child)::after {
+    content: "·";
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.project-resources {
+    margin-top: 22px;
+}
+
+.project-resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.project-resource-links a {
+    display: inline-block;
+    padding: 7px 13px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-resource-links a:hover {
+    background: var(--code-bg);
+}

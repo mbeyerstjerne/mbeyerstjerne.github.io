@@ -1,118 +1,45 @@
-baseURL: "https://mbeyerstjerne.github.io" 
-title: Mark Beyer Stjerne
-theme: PaperMod
+baseURL: "https://mbeyerstjerne.github.io/"
+title: "Mark Beyer Stjerne"
+theme: "PaperMod"
 
-enableInlineShortcodes: true
 enableRobotsTXT: true
-pagination:
-  pagerSize: 20
-
-taxonomies:
-    tag: tags
-
-menu:
-    main:
-        - name: About Me
-          url: about-me/
-          weight: 2
-        - name: Research Projects
-          url: research-projects/
-          weight: 3
-        - name: MSc Projects
-          url: ds-projects/
-          weight: 4
-        - name: Topics
-          url: tags/
-          weight: 5
-        
 
 params:
-    description: "This website hosts Mark Beyer Stjerne's curriculum vitae and contact information."
-    author: Mark Beyer Stjerne
-    # googleAnalyticsID: "G-XXXXX"
-    DateFormat: "January 2006"
-    defaultTheme: light
-    hideFooter: false
-    disableThemeToggle: false
-    hideMeta: false
-    ShowShareButtons: false
-    ShowReadingTime: true
-    disableSpecial1stPost: true
-    disableAnchoredHeadings: false
-    ShowPostNavLinks: true
-    ShowBreadCrumbs: true
-    ShowCodeCopyButtons: true
-    ShowAllPagesInArchive: false
-    MainSections: ["about-me", "research-projects", "ds-projects", "tags"]
-    ShowToc: false
-    # ShowPostMeta: true
-    disableScrollToTop: false
-    TocOpen: true
-    ShowWordCount: false
-    UseHugoToc: true
-    comments: false
-    math: true
-    profileMode:
-          enabled: true
-          title: Mark Beyer Stjerne
-          subtitle: "I am a master's student in astrophysics at the University of Copenhagen, Denmark, currently completing my thesis in collaboration with the [<ins>Cosmic Dawn Center</ins>](https://cosmicdawn.dk). Originally from Sydney, Australia, I'm a nerd for space, STEM, and linguistics."
-          imageUrl: "mark.png"
-          imageWidth: 160
-          imageHeight: 160
-          buttons:
-            - name: About Me
-              url: about-me/
-            - name: Research Projects
-              url: research-projects/
-            - name: MSc Projects
-              url: ds-projects/
-            - name: Topics
-              url: tags/
+  author: "Mark Beyer Stjerne"
+  defaultTheme: dark
+  disableThemeToggle: false
 
-    socialIcons:
-        - name: CV
-          url: cv.pdf
-        - name: Email
-          url: mailto:mbeyerstjerne@gmail.com
-        # - name: Zoom
-        #   url: https://www.zoom.us/my/igelfeld
-        # - name: Location
-        #   url: location/
-        # - name: Office Hours
-        #   url: officehours/
-        # - name: Google Scholar
-        #   url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
-        - name: GitHub
-          url: https://github.com/mbeyerstjerne
-        - name: LinkedIn
-          url: https://www.linkedin.com/in/mbeyerstjerne/
-        # - name: Substack
-        #   url: https://pmichaillat.substack.com
-        # - name: YouTube
-        #   url: https://www.youtube.com/@pmichaillat
-        # - name: Twitter
-        #   url: https://x.com/pmichaillat
-        # - name: Bluesky
-        #   url: https://bsky.app/profile/pmichaillat.bsky.social
+  assets:
+    disableScrollBarStyle: false
 
-    assets:
-        disableScrollBarStyle: false
-    cover:
-        hiddenInList: true
-        hiddenInSingle: false
-    label:
-      text: "Mark Beyer Stjerne"
-      icon: favicon.ico
-      iconHeight: 18
+  label:
+    text: "Home"
+    # icon: favicon.ico
+    iconHeight: 0
+
+  socialIcons:
+    - name: Email
+      url: "mailto:mbeyerstjerne@gmail.com"
+    - name: GitHub
+      url: "https://github.com/mbeyerstjerne"
+    - name: LinkedIn
+      url: "https://www.linkedin.com/in/mbeyerstjerne/"
+
+menu:
+  main:
+    - name: Work
+      url: /projects/
+      weight: 10
+
+    - name: CV
+      url: /cv/
+      weight: 20
+
+    - name: GitHub
+      url: "https://github.com/mbeyerstjerne"
+      weight: 30
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
-    highlight:
-        guessSyntax: true
-        style: autumn 
-    tableOfContents:
-        endLevel: 2
-        ordered: false
-        startLevel: 2
+  goldmark:
+    renderer:
+      unsafe: true

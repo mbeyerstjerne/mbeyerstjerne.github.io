@@ -1,0 +1,57 @@
+{{- define "main" }}
+
+<main class="custom-home">
+
+    <section class="home-work projects-page">
+
+        <h1>Work</h1>
+
+        {{ range (where site.RegularPages "Section" "projects").GroupByDate "2006" }}
+
+        <section class="project-year-group">
+
+            <h2 class="project-year-heading">
+                {{ .Key }}
+            </h2>
+
+            {{ range .Pages.ByDate.Reverse }}
+
+            <article class="project-entry">
+
+                <div class="project-content">
+
+                    <h3>
+                        <a href="{{ .RelPermalink }}">
+                            {{ .Title }}
+                        </a>
+                    </h3>
+
+                    {{ with .Params.tags }}
+                    <div class="project-tags">
+                        {{ range . }}
+                        <span>{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                    {{ with .Description }}
+                    <p>{{ . }}</p>
+                    {{ else }}
+                    <p>{{ .Summary }}</p>
+                    {{ end }}
+
+                </div>
+
+            </article>
+
+            {{ end }}
+
+        </section>
+
+        {{ end }}
+
+    </section>
+
+</main>
+
+{{- end }}
